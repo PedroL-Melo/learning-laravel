@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tbl_alimentos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_alimento');
+            $table->string('nomeAlimento', 100);
+            $table->string('tipoAlimento', 100)->nullable();
+            $table->integer('quantidade')->default(0);
             $table->timestamps();
         });
     }
