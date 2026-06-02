@@ -31,7 +31,7 @@ class alimentosController extends Controller
                 'tipoAlimento' => 'required|string|max:50',
                 'quantidade' => 'required|integer'
             ]);
-            $alimento = Alimentos::create($request->all());
+            $alimento = alimentos::create($request->all());
             return response()->json([
                 'message' => 'Alimento criado com sucesso!',
                 'data' => $alimento
@@ -47,7 +47,20 @@ class alimentosController extends Controller
     }
 
     public function atualizarAlimento(){
-         try {
+        $id = $request->input('id_alimento');
+        try {
+
+            $alimento = alimentos::find($id);
+            if (!$alimento ){
+                return reponse()->json(["message" => "Alimento não encontrado"], 404);
+            }
+            $request->validate([
+                'nomeAlimento' => 'required|string|max:100',
+                'tipoAlimento' => 'required|string|max:50',
+                'quantidade' => 'required|integer'
+            ]);
+
+            $alimento->update($request->all());
             
         } catch (Exception $e) {
             return response()->json([
@@ -58,9 +71,18 @@ class alimentosController extends Controller
 
     }
     
-    public function deletarAlimento(){
-         try {
-            
+    public function deletarAlimento($id){
+        $id = $request->input('id_alimento');
+        try {
+            $alimento = alimentos::find($id);
+            if (!$alimento ){
+                return reponse()->json(["message" => "Alimento não encontrado"], 404);
+            }
+            $alimento->delete();
+            return response()->json([
+                'message' => 'Alimento deletado com sucesso!',
+                'data' => $alimento
+            ], 200);
         } catch (Exception $e) {
             return response()->json([
                 'message' => 'Erro ao deletar alimento: ',
