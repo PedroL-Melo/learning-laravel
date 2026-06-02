@@ -24,9 +24,19 @@ class alimentosController extends Controller
         }
     }
 
-    public function criarAlimento(){
-         try {
-            
+    public function criarAlimento(Request $request){
+        try {
+            $request->validate([
+                'nomeAlimento' => 'required|string|max:100',
+                'tipoAlimento' => 'required|string|max:50',
+                'quantidade' => 'required|integer'
+            ]);
+            $alimento = Alimentos::create($request->all());
+            return response()->json([
+                'message' => 'Alimento criado com sucesso!',
+                'data' => $alimento
+            ], 201);
+
         } catch (Exception $e) {
             return response()->json([
                 'message' => 'Erro ao criar alimento: ',
