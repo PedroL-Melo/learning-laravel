@@ -20,7 +20,7 @@
                     <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Cadastrar Alimento</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">A third link</a></li>
+                    <li><a class="dropdown-item" href="#">listar Alimentos</a></li>
                     </ul>
                 </li>
 
