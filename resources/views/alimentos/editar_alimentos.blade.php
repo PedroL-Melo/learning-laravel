@@ -7,9 +7,9 @@
     @include('home.nav')
 
     <div class="container mt-3 col-md-6">
-        <h4 class="mb-3">Cadastrar Novo Alimento</h4>
+        <h4 class="mb-3">Editar Alimento</h4>
 
-        <form id="cadAlimento">
+        <form id="editAlimento">
             <div class="mb-3">
                 <label for="nomeAlimento" class="form-label">Nome do Alimento</label>
                 <input type="text" class="form-control" id="nomeAlimento" name="nomeAlimento" required>

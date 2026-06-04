@@ -18,9 +18,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Alimentos</a>
                     <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Cadastrar Alimento</a></li>
+                    <li><a class="dropdown-item" href="{{ route('cadastrar_alimento') }}">Cadastrar Alimento</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{{ route('listar_alimentos') }}">listar Alimentos</a></li>
+                    <li><a class="dropdown-item" href="{{ route('listar_alimentos') }}">Listar Alimentos</a></li>
                     </ul>
                 </li>
 
