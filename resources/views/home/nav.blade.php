@@ -12,15 +12,15 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Home</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Alimentos</a>
                     <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Cadastrar Alimento</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">listar Alimentos</a></li>
+                    <li><a class="dropdown-item" href="{{ route('listar_alimentos') }}">listar Alimentos</a></li>
                     </ul>
                 </li>
 

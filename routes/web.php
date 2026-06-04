@@ -10,3 +10,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('home.home');
 })->name('home');
+
+Route::get('listar_alimentos', function () {
+    return view('alimentos.listar_alimentos');
+})->name('listar_alimentos');
