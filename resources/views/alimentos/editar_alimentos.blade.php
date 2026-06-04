@@ -42,7 +42,9 @@
     </div>
 
     @include('home.footerjs')
-
+    <script>
+        window.alimento = @json(#alimento);
+    </script>
     <script src="{{asset('assets/js/formulario_alimento.js')}}"></script>
 </body>
 </html>
